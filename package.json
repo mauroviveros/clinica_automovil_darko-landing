@@ -1,12 +1,20 @@
 {
   "name": "clinica_automovil_darko-landing",
+  "description": "Modern landing page for La Clínica del Automóvil Darko, an auto repair shop specializing in vehicle maintenance and repair.",
+  "author": "Mauro Daniel Viveros <maurod.viveros@gmail.com> (TRY Ubbe)",
+  "license": "MIT",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauroviveros/clinica_automovil_darko-landing.git"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint"
   },
   "dependencies": {
     "@fontsource/bebas-neue": "^5.2.6",

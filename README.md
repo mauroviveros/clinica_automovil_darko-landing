@@ -1,46 +1,43 @@
-# Astro Starter Kit: Basics
+<div align="center">
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+<!-- ![La clínica del automovil Darko](URL) -->
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+# [La clínica del automovil Darko](https://mauroviveros.com.ar/)
 
-## 🚀 Project Structure
+Modern landing page for "La Clínica del Automóvil Darko", an auto repair shop specializing in vehicle maintenance and repair.
 
-Inside of your Astro project, you'll see the following folders and files:
+![GitHub last commit](https://img.shields.io/github/last-commit/mauroviveros/clinica_automovil_darko-landing?logo=git)
+![GitHub License](https://img.shields.io/github/license/mauroviveros/clinica_automovil_darko-landing?logo=github)
+![GitHub Repo stars](https://img.shields.io/github/stars/mauroviveros/clinica_automovil_darko-landing)
+![GitHub watchers](https://img.shields.io/github/watchers/mauroviveros/clinica_automovil_darko-landing)
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+[![Astro][astro-badge]][astro-link]
+[![TailwindCSS][tailwind-badge]][tailwind-link]
+</div>
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 📦 Requirements
+- [NodeJS][nodejs-link] _v22.17.0_
+- [PNPM][pnpm-link] _v10.13.1_
 
 ## 🧞 Commands
+| Command                | Action                                                         |
+| :--------------------- | :------------------------------------------------------------- |
+| `pnpm install`         | Installs dependencies                                          |
+| `pnpm dev`             | Starts local dev server at `localhost:4321`                    |
+| `pnpm build`           | Build your production site to `./dist/`                        |
+| `pnpm preview`         | Preview your build locally, before deploying                   |
+| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check`               |
+| `pnpm astro -- --help` | Get help using the Astro CLI                                   |
+| `pnpm lint`            | Lint your project to check for code style issues               |
 
-All commands are run from the root of the project, from a terminal:
+## 📜 License
+MIT © [Mauro Daniel Viveros](./LICENSE)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+[astro-link]: https://astro.build/
+[nodejs-link]: https://nodejs.org/
+[pnpm-link]: https://pnpm.io/
+[tailwind-link]: https://tailwindcss.com/
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[astro-badge]: https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white
+[tailwind-badge]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
