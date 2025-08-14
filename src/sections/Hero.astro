@@ -1,20 +1,22 @@
-<section class="flex items-center h-dvh p-32 font-bebas-neue">
-    <article class="flex flex-col gap-4 w-xs">
-        <h2 class="text-white text-6xl">La salud de tu vehículo en buenas manos</h2>
-        <button class="text-white bg-red-600 w-fit py-2 px-8 rounded-3xl">Pedir turno</button>
+---
+import Partners from "../components/Partners.astro";
+---
+
+<section class="flex items-center h-dvh font-bebas-neue relative">
+    <article class="flex flex-col gap-4 container px-16 mx-auto">
+        <h2 class="text-white text-5xl max-w-62">La salud de tu vehículo en buenas manos</h2>
+        <button class="text-white bg-red-800 w-fit py-2 px-8 rounded-3xl">Pedir turno</button>
     </article>
+
+    <Partners />
 </section>
-
-<!-- https://t3.ftcdn.net/jpg/06/41/73/20/360_F_641732036_if4Eq4gHSoPiDmmxIcim0FDPkjWGYlOq.jpg -->
-
 
 <style>
     section{
-        background-image: url('https://t3.ftcdn.net/jpg/06/41/73/20/360_F_641732036_if4Eq4gHSoPiDmmxIcim0FDPkjWGYlOq.jpg');
+        background-image: url('/hero.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-
-        box-shadow: 0px 0px 200px 200px rgba(0,0,0,.75) inset;
+        box-shadow: 0px 0px 100px 0px rgba(0,0,0,.75) inset;
     }
 </style>
