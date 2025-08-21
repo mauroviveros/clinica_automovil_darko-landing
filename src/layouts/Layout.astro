@@ -9,19 +9,11 @@ import SEO from "../components/SEO.astro";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>La clínica del automovil Darko</title>
 
 		<SEO />
 	</head>
-	<body>
+	<body class="flex flex-col bg-background text-on-background">
 		<slot />
 	</body>
 </html>
-
-<style>
-	html, body{
-		/* background: linear-gradient(135deg, #1A1A1A, #171717); */
-		background-color: #0B0D0A;
-		/* backdrop-filter: blur(32px) */
-	}
-</style>
