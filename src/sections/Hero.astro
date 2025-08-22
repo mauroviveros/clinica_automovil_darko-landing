@@ -1,27 +1,44 @@
 ---
 import Section from "../components/Section.astro";
-
 ---
-<Section class="flex">
-    <article>
-        <h1 class="font-bebas-neue text-4xl lg:text-6xl">
-            La salud de tu <br/>
-            vehiculo en <br/>
-            <span class="text-primary">buenas manos</span>
-        </h1>
-        
-        <p>Expertos en diagnóstico y reparación automotriz. Servicio profesional con garantía y atención personalizada para todas las marcas.</p>
 
-        <button class="bg-primary py-2 px-8 rounded-lg cursor-pointer" type="button">Pedir turno</button>
+<Section class="flex flex-col justify-center">
+  <div class="flex items-center justify-center gap-8">
+    <article class="flex flex-col gap-4 w-sm">
+      <h1 class="font-bebas-neue text-4xl lg:text-6xl">
+        La salud de tu <br />
+        vehiculo en <br />
+        <span class="text-primary">buenas manos</span>
+      </h1>
+
+      <p>
+        Expertos en diagnóstico y reparación automotriz. Servicio profesional
+        con garantía y atención personalizada para todas las marcas.
+      </p>
+
+      <button
+        class="bg-primary hover:bg-amber-700 animate-pulse font-bebas-neue w-fit py-2 px-8 rounded-lg cursor-pointer"
+        type="button">Pedir turno</button
+      >
     </article>
 
-    <figure class="w-1/2">
-        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ObxMt4d3T5MDA2Ca7JyHf5lCNuxMZN.png" alt="" class="w-3/4">
+    <figure class="w-md p-4 relative">
+      <img
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ObxMt4d3T5MDA2Ca7JyHf5lCNuxMZN.png"
+        alt=""
+      />
 
-        <figcaption>
-
-        </figcaption>
+      <figcaption class="absolute -bottom-1 -left-1 border border-zinc-500 bg-zinc-600 p-2 rounded-lg">
+        <span class="w-12 h-12 block bg-amber-500 rounded-full">
+          15+
+        </span>
+        <div>
+          <p>Años de experiencia</p>
+          <p>Miles de clientes satisfechos</p>
+        </div>
+      </figcaption>
     </figure>
+  </div>
 </Section>
 
 <!-- ---
