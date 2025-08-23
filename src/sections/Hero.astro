@@ -1,9 +1,10 @@
 ---
+import Partners from "../components/Partners.astro";
 import Section from "../components/Section.astro";
 ---
 
-<Section class="flex flex-col justify-center">
-  <div class="flex items-center justify-center gap-8">
+<Section class="flex flex-col justify-center gap-8 min-h-dvh py-16">
+  <div class="flex flex-col md:flex-row items-center justify-center gap-4">
     <article class="flex flex-col gap-4 w-sm">
       <h1 class="font-bebas-neue text-4xl lg:text-6xl">
         La salud de tu <br />
@@ -17,18 +18,21 @@ import Section from "../components/Section.astro";
       </p>
 
       <button
-        class="bg-primary hover:bg-amber-700 animate-pulse font-bebas-neue w-fit py-2 px-8 rounded-lg cursor-pointer"
-        type="button">Pedir turno</button
+        type="button"
+        class="bg-primary font-bebas-neue w-fit py-2 px-8 rounded-lg cursor-pointer"
       >
+        Pedir turno
+      </button>
     </article>
 
     <figure class="w-md p-4 relative">
       <img
+        class="rounded-2xl"
         src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ObxMt4d3T5MDA2Ca7JyHf5lCNuxMZN.png"
         alt=""
       />
 
-      <figcaption class="absolute -bottom-1 -left-1 border border-zinc-500 bg-zinc-600 p-2 rounded-lg">
+      <!-- <figcaption class="absolute -bottom-1 -left-1 border border-zinc-500 bg-zinc-600 p-2 rounded-lg">
         <span class="w-12 h-12 block bg-amber-500 rounded-full">
           15+
         </span>
@@ -36,30 +40,9 @@ import Section from "../components/Section.astro";
           <p>Años de experiencia</p>
           <p>Miles de clientes satisfechos</p>
         </div>
-      </figcaption>
+      </figcaption> -->
     </figure>
   </div>
+
+  <Partners />
 </Section>
-
-<!-- ---
-import Partners from "../components/Partners.astro";
----
-
-<section class="flex items-center h-dvh font-bebas-neue relative">
-    <article class="flex flex-col gap-4 container px-16 mx-auto">
-        <h2 class="text-white text-5xl max-w-62">La salud de tu vehículo en buenas manos</h2>
-        <button class="text-white bg-red-800 w-fit py-2 px-8 rounded-3xl">Pedir turno</button>
-    </article>
-
-    <Partners />
-</section>
-
-<style>
-    section{
-        background-image: url('/hero.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        box-shadow: 0px 0px 100px 0px rgba(0,0,0,.75) inset;
-    }
-</style> -->
