@@ -11,7 +11,6 @@ const partners = [
     "Mazda",
     "Volkswagen",
     "Hyundai",
-
 ]
 ---
 
@@ -19,7 +18,7 @@ const partners = [
     {new Array(3).fill(null).map(() => (
     <ul class="flex gap-8 animate-infinite-scroll">
         {partners.map(partner => (
-            <li class="flex items-center text-white">
+            <li class="flex items-center">
                 <Icon name={`simple-icons:${partner.toLowerCase()}`} size="2.5rem" class="inline-block mr-2" />
                 <span class="text-xl select-none">{partner}</span>
             </li>

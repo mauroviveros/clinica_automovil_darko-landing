@@ -3,9 +3,16 @@ import Partners from "../components/Partners.astro";
 import Section from "../components/Section.astro";
 ---
 
-<Section class="flex flex-col justify-center gap-8 min-h-dvh py-16">
+<Section class="flex flex-col justify-center gap-4 min-h-dvh pt-16">
+  <div
+    class="absolute inset-0 opacity-10 w-full h-full left-0 -z-10"
+    style={{
+      backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.1'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+    }}
+  ></div>
+
   <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-    <article class="flex flex-col gap-4 w-sm">
+    <article class="flex flex-col gap-4 p-4 max-w-md">
       <h1 class="font-bebas-neue text-4xl lg:text-6xl">
         La salud de tu <br />
         vehiculo en <br />
@@ -25,7 +32,7 @@ import Section from "../components/Section.astro";
       </button>
     </article>
 
-    <figure class="w-md p-4 relative">
+    <figure class="max-w-md p-4 relative">
       <img
         class="rounded-2xl"
         src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ObxMt4d3T5MDA2Ca7JyHf5lCNuxMZN.png"
