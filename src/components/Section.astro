@@ -3,7 +3,7 @@ export interface Props { class?: string; }
 const { class: className } = Astro.props;
 ---
 
-<section class={`flex flex-col justify-center ${className}`}>
+<section class={`flex flex-col justify-center py-16 ${className}`}>
   <div class="container flex flex-col items-center justify-center gap-4 mx-auto">
     <slot />
   </div>
