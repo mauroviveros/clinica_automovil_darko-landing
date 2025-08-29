@@ -5,14 +5,23 @@
   --color-primary: var(--color-red-800);
   --color-on-primary: var(--color-white);
 
-  --color-background: #121212;
-  --color-on-background: #e0e0e0;
+  --color-background: oklch(0.1822 0 0);
+  --color-on-background: oklch(0.9067 0 0);
+  --color-card: #1a1a1a;
+  --color-on-card: #ffffff;
 
+  --color-muted: #1a1a1a;
+  --color-on-muted: #9ca3af;
+
+  --color-border: #374151;
   --font-bebas-neue: "Bebas Neue", sans-serif;
   --animate-infinite-scroll: infinite-scroll 25s linear infinite;
 }
 
 @layer base {
+  * {
+    @apply border-border;
+  }
   body{
     @apply bg-background text-on-background
   }
