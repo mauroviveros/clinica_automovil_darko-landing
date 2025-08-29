@@ -4,16 +4,20 @@ import SEO from "../components/SEO.astro";
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>La clínica del automovil Darko</title>
+  <head>
+    <SEO />
+  </head>
+  <body>
+    <!-- <header>
+      header
+    </header> -->
 
-		<SEO />
-	</head>
-	<body class="flex flex-col bg-background text-on-background">
-		<slot />
-	</body>
+    <main>
+      <slot />
+    </main>
+
+    <!-- <footer>
+      footer
+    </footer> -->
+  </body>
 </html>

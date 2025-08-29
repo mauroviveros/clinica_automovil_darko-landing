@@ -6,16 +6,16 @@
   --color-on-primary: var(--color-white);
 
   --color-background: #121212;
-  --color-foreground: #ffffff;
   --color-on-background: #e0e0e0;
-  --color-on-foreground: #000000;
-
-
-
-
 
   --font-bebas-neue: "Bebas Neue", sans-serif;
   --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+}
+
+@layer base {
+  body{
+    @apply bg-background text-on-background
+  }
 }
 
 @keyframes infinite-scroll {

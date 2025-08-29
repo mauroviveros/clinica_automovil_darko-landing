@@ -14,15 +14,15 @@ const partners = [
 ]
 ---
 
-<article class="flex gap-8 w-3/4 overflow-hidden mx-auto left-0 right-0 bottom-16 font-bebas-neue [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
-    {new Array(3).fill(null).map(() => (
+<article class="flex gap-8 w-3/4 overflow-hidden font-bebas-neue [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+  {new Array(3).fill(null).map(() => (
     <ul class="flex gap-8 animate-infinite-scroll">
-        {partners.map(partner => (
-            <li class="flex items-center">
-                <Icon name={`simple-icons:${partner.toLowerCase()}`} size="2.5rem" class="inline-block mr-2" />
-                <span class="text-xl select-none">{partner}</span>
-            </li>
-        ))}
+      {partners.map(partner => (
+        <li class="flex items-center gap-2">
+          <Icon name={`simple-icons:${partner.toLowerCase()}`} size="2.5rem"/>
+          <span class="text-xl select-none">{partner}</span>
+        </li>
+      ))}
     </ul>
-    ))}
+  ))}
 </article>
