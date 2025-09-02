@@ -1,5 +1,13 @@
 ---
 import { Rating, Section } from "@components";
+import { PlacesClient } from '@googlemaps/places';
+
+const IGNORE_REVIEWS = ["ChZDSUhNMG9nS0VJQ0FnTUR3OXNDdmRBEAE", "ChdDSUhNMG9nS0VJQ0FnSUNlMXVuVmp3RRAB"];
+const client = new PlacesClient({ apiKey: import.meta.env.GOOGLE_MAPS_API_KEY });
+const place = (await client.getPlace(
+  { name: import.meta.env.GOOGLE_MAPS_PLACE_ID },
+  { otherArgs: { headers: { 'X-Goog-FieldMask': 'rating,reviews,userRatingCount' }}}
+))[0];
 ---
 
 <Section>
@@ -8,14 +16,14 @@ import { Rating, Section } from "@components";
 
   <article class="grid md:grid-cols-2 lg:grid-cols-4 p-4 gap-8">
     {
-      Array(8).fill(null).map(() => (
+      place.reviews?.filter(({ name }) => !IGNORE_REVIEWS.map(id => `${import.meta.env.GOOGLE_MAPS_PLACE_ID}/reviews/${id}`).includes(name || '')).map(review => (
         <blockquote class="flex flex-col gap-6 border rounded-xl shadow-lg p-6 bg-card text-on-card">
-          <Rating value={4.5} />
+          <Rating value={review.rating || 0} />
 
-          <p class="text-balance text-center italic text-on-muted">"Excelente servicio, muy profesionales y atentos. ¡Recomendados al 100%!"</p>
+          <p class="text-balance text-center italic grow-1 text-on-muted">"{review.originalText?.text}"</p>
 
           <footer class="border-t pt-4 text-end">
-            Juan Pérez
+            {review.authorAttribution?.displayName}
           </footer>
         </blockquote>
       ))
@@ -25,8 +33,8 @@ import { Rating, Section } from "@components";
   </article>
 
   <div class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card text-on-card">
-    <Rating value={4.5} class="size-4!"/>
-    <span class="text-lg font-semibold">4.9/5</span>
-    <span class="text-on-muted">• 200+ reseñas</span>
+    <Rating value={place.rating || 0} class="size-4!"/>
+    <span class="text-lg font-semibold">{place.rating}</span>
+    <span class="text-on-muted">• {place.userRatingCount || 0} reseñas</span>
   </div>
 </Section>

@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@fontsource/bebas-neue": "^5.2.6",
+    "@googlemaps/places": "^2.1.0",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.12.9",
     "astro-icon": "^1.1.5",
