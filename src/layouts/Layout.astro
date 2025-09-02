@@ -25,7 +25,7 @@ import { Icon } from "astro-icon/components";
         <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-sm text-balance">
           <div class="space-y-4">
             <Brand />
-            <p>Tu taller mecánico de confianza con más de 15 años de experiencia brindando servicios automotrices de calidad.</p>
+            <p>Tu taller mecánico de confianza con más de 35 años de experiencia brindando servicios automotrices de calidad.</p>
           </div>
 
           <div class="space-y-4">
@@ -61,20 +61,41 @@ import { Icon } from "astro-icon/components";
           <div class="space-y-4">
             <h4 class="text-lg font-semibold">Contacto</h4>
             <ul class="space-y-2">
-              <li class="flex items-center gap-2">
-                <Icon name="lucide:map-pin" />
-                <span>Juan José Paso 2653, Muñiz, Buenos Aires</span>
+              <li>
+                <a
+                  class="flex items-center gap-2 hover:text-primary transition-colors"
+                  href="https://maps.app.goo.gl/Ut9Nkqdi8v89n8Eu7"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Icon name="lucide:map-pin" />
+                  Juan José Paso 2668, Muñiz, Buenos Aires
+                </a>
               </li>
 
-              <li class="flex items-center gap-2">
-                <Icon name="lucide:phone" />
-                <span>+54 9 11 5142-3888</span>
+              <li>
+                <a
+                  class="flex items-center gap-2 hover:text-primary transition-colors"
+                  href="https://wa.me/+5491153437552"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Icon name="lucide:phone" />
+                  <span>+54 9 11 5343-7552</span>
+                </a>
               </li>
 
-              <li class="flex items-center gap-2">
-                <Icon name="lucide:mail" />
+              <!-- <li>
+                <a
+                  class="flex items-center gap-2 hover:text-primary transition-colors"
+                  href="mailto:info@clinicaautomovildarko.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Icon name="lucide:mail" />
                 <span>info@clinicaautomovildarko.com</span>
-              </li>
+                </a>
+              </li> -->
             </ul>
           </div>
         </section>

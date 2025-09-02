@@ -1,22 +1,23 @@
 ---
 import { Rating, Section } from "@components";
+import { GOOGLE_MAPS_API_KEY, GOOGLE_MAPS_PLACE_ID } from "astro:env/server";
 import { PlacesClient } from '@googlemaps/places';
 
 const IGNORE_REVIEWS = ["ChZDSUhNMG9nS0VJQ0FnTUR3OXNDdmRBEAE", "ChdDSUhNMG9nS0VJQ0FnSUNlMXVuVmp3RRAB"];
-const client = new PlacesClient({ apiKey: import.meta.env.GOOGLE_MAPS_API_KEY });
+const client = new PlacesClient({ apiKey: GOOGLE_MAPS_API_KEY });
 const place = (await client.getPlace(
-  { name: import.meta.env.GOOGLE_MAPS_PLACE_ID },
+  { name: GOOGLE_MAPS_PLACE_ID },
   { otherArgs: { headers: { 'X-Goog-FieldMask': 'rating,reviews,userRatingCount' }}}
 ))[0];
 ---
 
 <Section>
-  <h2 class="text-4xl text-center font-bold">Lo que Dicen Nuestros Clientes</h2>
+  <h2 class="text-4xl text-center font-bold">Lo que dicen nuestros Clientes</h2>
   <p class="text-xl text-center max-w-2xl mx-auto mb-4 text-on-muted">La satisfacción de nuestros clientes es nuestra mejor carta de presentación.</p>
 
   <article class="grid md:grid-cols-2 lg:grid-cols-4 p-4 gap-8">
     {
-      place.reviews?.filter(({ name }) => !IGNORE_REVIEWS.map(id => `${import.meta.env.GOOGLE_MAPS_PLACE_ID}/reviews/${id}`).includes(name || '')).map(review => (
+      place.reviews?.filter(({ name }) => !IGNORE_REVIEWS.map(id => `${GOOGLE_MAPS_PLACE_ID}/reviews/${id}`).includes(name || '')).map(review => (
         <blockquote class="flex flex-col gap-6 border rounded-xl shadow-lg p-6 bg-card text-on-card">
           <Rating value={review.rating || 0} />
 
