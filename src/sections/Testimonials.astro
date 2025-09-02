@@ -1,0 +1,32 @@
+---
+import { Rating, Section } from "@components";
+---
+
+<Section>
+  <h2 class="text-4xl text-center font-bold">Lo que Dicen Nuestros Clientes</h2>
+  <p class="text-xl text-center max-w-2xl mx-auto mb-4 text-on-muted">La satisfacción de nuestros clientes es nuestra mejor carta de presentación.</p>
+
+  <article class="grid md:grid-cols-2 lg:grid-cols-4 p-4 gap-8">
+    {
+      Array(8).fill(null).map(() => (
+        <blockquote class="flex flex-col gap-6 border rounded-xl shadow-lg p-6 bg-card text-on-card">
+          <Rating value={4.5} />
+
+          <p class="text-balance text-center italic text-on-muted">"Excelente servicio, muy profesionales y atentos. ¡Recomendados al 100%!"</p>
+
+          <footer class="border-t pt-4 text-end">
+            Juan Pérez
+          </footer>
+        </blockquote>
+      ))
+
+
+    }
+  </article>
+
+  <div class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card text-on-card">
+    <Rating value={4.5} class="size-4!"/>
+    <span class="text-lg font-semibold">4.9/5</span>
+    <span class="text-on-muted">• 200+ reseñas</span>
+  </div>
+</Section>

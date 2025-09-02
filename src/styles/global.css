@@ -7,13 +7,13 @@
 
   --color-background: oklch(0.1822 0 0);
   --color-on-background: oklch(0.9067 0 0);
-  --color-card: #1a1a1a;
-  --color-on-card: #ffffff;
+  --color-card: oklch(0.1 0 0);
+  --color-on-card: oklch(1 0 0);
 
   --color-muted: #1a1a1a;
   --color-on-muted: #9ca3af;
 
-  --color-border: #374151;
+  --color-border: oklch(0.25 0.02 225);
   --font-bebas-neue: "Bebas Neue", sans-serif;
   --animate-infinite-scroll: infinite-scroll 25s linear infinite;
 }
