@@ -1,5 +1,6 @@
 ---
 import { Rating, Section } from "@components";
+import { Image } from "astro:assets";
 import { fetchPlace } from "lib/googlePlaces";
 const place = await fetchPlace();
 ---
@@ -12,8 +13,19 @@ const place = await fetchPlace();
 
         <p class="text-balance text-center italic grow-1 text-on-muted">"{review.originalText?.text}"</p>
 
-        <footer class="border-t pt-4 text-end">
-          {review.authorAttribution?.displayName}
+        <footer class="flex justify-end gap-2 border-t pt-4">
+          <span class="leading-8">{review.authorAttribution?.displayName}</span>
+          { review.authorAttribution?.photoUri && (
+            <Image
+              src={review.authorAttribution?.photoUri}
+              alt={review.authorAttribution?.displayName || null}
+              referrerpolicy="no-referrer"
+              width="32"
+              height="32"
+              decoding="async"
+              loading="lazy"
+            />
+          )}
         </footer>
       </blockquote>
     ))}
