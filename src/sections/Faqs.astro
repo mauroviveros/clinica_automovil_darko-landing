@@ -1,14 +1,50 @@
 ---
 import { Section } from "@components";
+import { Icon } from "astro-icon/components";
+
+const faqs = [
+  {
+    question: "¿Qué tipos de vehículos reparan?",
+    answer: "Trabajamos con todas las marcas y modelos de vehículos, desde autos compactos hasta SUVs y camionetas. Nuestro equipo tiene experiencia con vehículos nacionales e importados."
+  },
+  {
+    question: '¿Ofrecen garantía en sus trabajos?',
+    answer: 'Sí, todos nuestros trabajos incluyen garantía. La duración varía según el tipo de servicio: 6 meses para reparaciones mayores, 3 meses para servicios generales y 1 año para repuestos originales.'
+  },
+  {
+    question: '¿Cuánto tiempo toma una reparación típica?',
+    answer: 'El tiempo depende del tipo de servicio. Un mantenimiento básico toma 2-3 horas, mientras que reparaciones mayores pueden tomar 1-3 días. Siempre te informamos el tiempo estimado antes de comenzar.'
+  },
+  {
+    question: '¿Necesito cita previa?',
+    answer: 'Recomendamos agendar cita para garantizar disponibilidad, especialmente para servicios mayores. Sin embargo, también atendemos emergencias y servicios menores sin cita previa.'
+  },
+  {
+    question: '¿Qué formas de pago aceptan?',
+    answer: 'Aceptamos efectivo, tarjetas de débito y crédito, transferencias bancarias y cheques. También ofrecemos planes de financiamiento para reparaciones mayores.'
+  },
+  {
+    question: '¿Usan repuestos originales?',
+    answer: 'Sí, trabajamos principalmente con repuestos originales y de primera calidad. También ofrecemos alternativas compatibles de marcas reconocidas para ajustarnos a diferentes presupuestos.'
+  }
+]
+
 ---
 
-<Section>
-  <article class="w-full max-w-3xl mx-auto">
-    <details class="rounded-lg bg-card">
-      <summary class="list-none cursor-pointer transition-colors px-6 py-4 hover:text-primary">
-        <span>¿Qué tipos de vehículos reparan?</span>
-      </summary>
-      <p class="px-6 pb-4 text-on-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, laboriosam?</p>
-    </details>
+<Section title="Preguntas Frecuentes" subtitle="Resolvemos las dudas más comunes sobre nuestros servicios.">
+  <article class="flex flex-col w-full max-w-3xl mx-auto gap-4">
+    {faqs.map(({ question, answer }) => (
+      <details class="rounded-lg bg-card group">
+        <summary class="flex items-center list-none cursor-pointer px-6 py-4 transition-colors hover:text-primary">
+          <span class="font-semibold grow">{question}</span>
+          <Icon name="lucide:chevron-down" size="1.5rem" class="group-open:rotate-180 transition-transform" />
+        </summary>
+
+        <div class="px-6 pb-4 text-on-muted">
+          <p>{answer}</p>
+        </div>
+      </details>
+    ))}
+
   </article>
 </Section>

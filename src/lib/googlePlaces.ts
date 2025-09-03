@@ -9,7 +9,9 @@ export const fetchPlace = async () => {
     { otherArgs: { headers: { 'X-Goog-FieldMask': 'rating,reviews,userRatingCount' }}}
   )
 
-  places[0].reviews = places[0].reviews?.filter(({ name }) => !IGNORE_REVIEWS.map(id => `${GOOGLE_MAPS_PLACE_ID}/reviews/${id}`).includes(name || ''));
+  places[0].reviews = (places[0].reviews || [])
+    .filter(({ name }) => !IGNORE_REVIEWS
+    .map(id => `${GOOGLE_MAPS_PLACE_ID}/reviews/${id}`).includes(name || ''));
 
   return places[0];
 }

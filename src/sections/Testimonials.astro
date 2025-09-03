@@ -4,26 +4,19 @@ import { fetchPlace } from "lib/googlePlaces";
 const place = await fetchPlace();
 ---
 
-<Section>
-  <h2 class="text-4xl text-center font-bold">Lo que dicen nuestros Clientes</h2>
-  <p class="text-xl text-center max-w-2xl mx-auto mb-4 text-on-muted">La satisfacción de nuestros clientes es nuestra mejor carta de presentación.</p>
-
+<Section title="Lo que dicen nuestros Clientes" subtitle="La satisfacción de nuestros clientes es nuestra mejor carta de presentación.">
   <article class="grid md:grid-cols-2 lg:grid-cols-4 p-4 gap-8">
-    {
-      place.reviews?.map(review => (
-        <blockquote class="flex flex-col gap-6 border rounded-xl shadow-lg p-6 bg-card text-on-card">
-          <Rating value={review.rating || 0} />
+    {place.reviews?.map(review => (
+      <blockquote class="flex flex-col gap-6 border rounded-xl shadow-lg p-6 bg-card text-on-card">
+        <Rating value={review.rating || 0} />
 
-          <p class="text-balance text-center italic grow-1 text-on-muted">"{review.originalText?.text}"</p>
+        <p class="text-balance text-center italic grow-1 text-on-muted">"{review.originalText?.text}"</p>
 
-          <footer class="border-t pt-4 text-end">
-            {review.authorAttribution?.displayName}
-          </footer>
-        </blockquote>
-      ))
-
-
-    }
+        <footer class="border-t pt-4 text-end">
+          {review.authorAttribution?.displayName}
+        </footer>
+      </blockquote>
+    ))}
   </article>
 
   <div class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card text-on-card">
