@@ -1,10 +1,16 @@
 ---
-export interface Props { class?: string; }
-const { class: className } = Astro.props;
+export interface Props {
+  class?: string;
+  subtitle?: string;
+  title?: string;
+}
+const { class: className, subtitle, title } = Astro.props;
 ---
 
 <section class={`flex flex-col justify-center py-16 ${className}`}>
   <div class="container flex flex-col items-center justify-center gap-4 mx-auto px-4">
+    {title && <h2 class="text-4xl text-center font-bold">{title}</h2>}
+    {subtitle && <p class="text-xl text-center max-w-2xl mx-auto mb-4 text-on-muted">{subtitle}</p>}
     <slot />
   </div>
 </section>
