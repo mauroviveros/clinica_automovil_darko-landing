@@ -1,44 +1,45 @@
 ---
-import { Icon } from "astro-icon/components";
-import Section from "../components/Section.astro";
+import { Icon } from 'astro-icon/components';
+import Section from '../components/Section.astro';
 
 const services = [
-    {
-        icon: "mdi:engine",
-        title: "Mecánica general",
-        description: "Reparaciones y mantenimiento integral de tu vehiculo"
-    },
-    {
-        icon: "mdi:car",
-        title: "Electromecánica",
-        description: "Soluciones eléctricas y electrónicas para tu vehículo"
-    },
-    {
-        icon: "mdi:car-wash",
-        title: "Lavado y detailing",
-        description: "Limpieza y cuidado estético de tu vehículo"
-    },
-    {
-        icon: "mdi:car-cog",
-        title: "Alineación y balanceo",
-        description: "Ajuste y mantenimiento de la suspensión y dirección"
-    },
-    {
-        icon: "mdi:car-battery",
-        title: "Baterías",
-        description: "Reemplazo y mantenimiento de baterías automotrices"
-    }
-]
-
+  {
+    icon: 'mdi:engine',
+    title: 'Mecánica general',
+    description: 'Reparaciones y mantenimiento integral de tu vehiculo',
+  },
+  {
+    icon: 'mdi:car',
+    title: 'Electromecánica',
+    description: 'Soluciones eléctricas y electrónicas para tu vehículo',
+  },
+  {
+    icon: 'mdi:car-wash',
+    title: 'Lavado y detailing',
+    description: 'Limpieza y cuidado estético de tu vehículo',
+  },
+  {
+    icon: 'mdi:car-cog',
+    title: 'Alineación y balanceo',
+    description: 'Ajuste y mantenimiento de la suspensión y dirección',
+  },
+  {
+    icon: 'mdi:car-battery',
+    title: 'Baterías',
+    description: 'Reemplazo y mantenimiento de baterías automotrices',
+  },
+];
 ---
 
 <Section>
-  <h2 class="font-bebas-neue text-white text-4xl text-center m-4">Servicios</h2>
-      {services.map(({ icon, title, description }) => (
-          <article class="flex flex-col gap-2 items-center text-center rounded-2xl shadow-2xl shadow-zinc-900 bg-zinc-900 text-white p-8 w-64 h-80">
-              <Icon name={icon} size="8rem"/>
-              <h3 class="text-2xl font-bold">{title}</h3>
-              <p class="text-lg">{description}</p>
-          </article>
-      ))}
+  <h2 class="font-bebas-neue m-4 text-center text-4xl text-white">Servicios</h2>
+  {
+    services.map(({ icon, title, description }) => (
+      <article class="flex h-80 w-64 flex-col items-center gap-2 rounded-2xl bg-zinc-900 p-8 text-center text-white shadow-2xl shadow-zinc-900">
+        <Icon name={icon} size="8rem" />
+        <h3 class="text-2xl font-bold">{title}</h3>
+        <p class="text-lg">{description}</p>
+      </article>
+    ))
+  }
 </Section>

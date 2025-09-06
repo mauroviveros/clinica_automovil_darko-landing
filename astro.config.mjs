@@ -8,12 +8,12 @@ import icon from 'astro-icon';
 export default defineConfig({
   integrations: [icon()],
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
   env: {
     schema: {
       GOOGLE_MAPS_API_KEY: envField.string({ context: 'server', access: 'secret' }),
-      GOOGLE_MAPS_PLACE_ID: envField.string({ context: 'server', access: 'secret' })
-    }
-  }
+      GOOGLE_MAPS_PLACE_ID: envField.string({ context: 'server', access: 'secret' }),
+    },
+  },
 });

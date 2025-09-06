@@ -1,38 +1,45 @@
 ---
-import { Rating, Section } from "@components";
-import { Image } from "astro:assets";
-import { fetchPlace } from "lib/googlePlaces";
+import { Rating, Section } from '@components';
+import { Image } from 'astro:assets';
+import { fetchPlace } from 'lib/googlePlaces';
 const place = await fetchPlace();
 ---
 
-<Section title="Lo que dicen nuestros Clientes" subtitle="La satisfacción de nuestros clientes es nuestra mejor carta de presentación.">
-  <article class="grid md:grid-cols-2 lg:grid-cols-4 p-4 gap-8">
-    {place.reviews?.map(review => (
-      <blockquote class="flex flex-col gap-6 border rounded-xl shadow-lg p-6 bg-card text-on-card">
-        <Rating value={review.rating || 0} />
+<Section
+  title="Lo que dicen nuestros Clientes"
+  subtitle="La satisfacción de nuestros clientes es nuestra mejor carta de presentación."
+>
+  <article class="grid gap-8 p-4 md:grid-cols-2 lg:grid-cols-4">
+    {
+      place.reviews?.map((review) => (
+        <blockquote class="bg-card text-on-card flex flex-col gap-6 rounded-xl border p-6 shadow-lg">
+          <Rating value={review.rating || 0} />
 
-        <p class="text-balance text-center italic grow-1 text-on-muted">"{review.originalText?.text}"</p>
+          <p class="grow-1 text-on-muted text-balance text-center italic">
+            "{review.originalText?.text}"
+          </p>
 
-        <footer class="flex justify-end gap-2 border-t pt-4">
-          <span class="leading-8">{review.authorAttribution?.displayName}</span>
-          { review.authorAttribution?.photoUri && (
-            <Image
-              src={review.authorAttribution?.photoUri}
-              alt={review.authorAttribution?.displayName || null}
-              referrerpolicy="no-referrer"
-              width="32"
-              height="32"
-              decoding="async"
-              loading="lazy"
-            />
-          )}
-        </footer>
-      </blockquote>
-    ))}
+          <footer class="flex justify-end gap-2 border-t pt-4">
+            <span class="leading-8">{review.authorAttribution?.displayName}</span>
+            {review.authorAttribution?.photoUri && (
+              <Image
+                src={review.authorAttribution?.photoUri}
+                alt={review.authorAttribution?.displayName || null}
+                referrerpolicy="no-referrer"
+                width="32"
+                height="32"
+                decoding="async"
+                loading="lazy"
+              />
+            )}
+          </footer>
+        </blockquote>
+      ))
+    }
   </article>
 
-  <div class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card text-on-card">
-    <Rating value={place.rating || 0} class="size-4!"/>
+  <div class="bg-card text-on-card inline-flex items-center gap-2 rounded-full px-6 py-3">
+    <Rating value={place.rating || 0} class="size-4!" />
     <span class="text-lg font-semibold">{place.rating}</span>
     <span class="text-on-muted">• {place.userRatingCount || 0} reseñas</span>
   </div>

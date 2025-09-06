@@ -1,19 +1,22 @@
 ---
-import { Partners, Section } from "@components";
+import { Partners, Section } from '@components';
 ---
 
 <Section class="relative min-h-dvh pt-24">
-  <div class="flex flex-col md:flex-row gap-4">
-    <article class="flex flex-col justify-center items-start gap-4 p-4 max-w-md">
+  <div class="flex flex-col gap-4 md:flex-row">
+    <article class="flex max-w-md flex-col items-start justify-center gap-4 p-4">
       <h1 class="font-bebas-neue text-6xl uppercase">
         La salud de tu vehiculo en <br />
         <span class="text-primary">buenas manos</span>
       </h1>
 
-      <p class="text-xl">Expertos en diagnóstico y reparación automotriz. Servicio profesional con garantía y atención personalizada para todas las marcas.</p>
+      <p class="text-xl">
+        Expertos en diagnóstico y reparación automotriz. Servicio profesional con garantía y
+        atención personalizada para todas las marcas.
+      </p>
 
       <a
-        class="text-lg cursor-pointer font-bebas-neue py-2 px-8 rounded-lg transition-colors text-on-primary bg-primary hover:bg-primary/90"
+        class="font-bebas-neue text-on-primary bg-primary hover:bg-primary/90 cursor-pointer rounded-lg px-8 py-2 text-lg transition-colors"
         href="https://wa.me/5491153437552?text=Hola,%20me%20contacto%20desde%20el%20sitio%20web%20del%20taller%20y%20quisiera%20solicitar%20un%20turno.%20¿Podrían%20indicarme%20la%20disponibilidad,%20por%20favor?"
         rel="noopener noreferrer"
         target="_blank"
@@ -22,7 +25,7 @@ import { Partners, Section } from "@components";
       </a>
     </article>
 
-    <figure class="relative p-4 max-w-md">
+    <figure class="relative max-w-md p-4">
       <img
         class="rounded-2xl"
         src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ObxMt4d3T5MDA2Ca7JyHf5lCNuxMZN.png"
@@ -34,9 +37,10 @@ import { Partners, Section } from "@components";
   <Partners />
 
   <div
-    class="absolute inset-0 opacity-10 w-full h-full left-0 -z-10"
+    class="absolute inset-0 left-0 -z-10 h-full w-full opacity-10"
     style={{
       backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.1'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
     }}
-  ></div>
+  >
+  </div>
 </Section>
