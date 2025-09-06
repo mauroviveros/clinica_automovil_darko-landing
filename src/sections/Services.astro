@@ -4,42 +4,53 @@ import Section from '../components/Section.astro';
 
 const services = [
   {
-    icon: 'mdi:engine',
-    title: 'Mecánica general',
-    description: 'Reparaciones y mantenimiento integral de tu vehiculo',
+    icon: 'lucide:wrench',
+    title: 'Mantenimiento General',
+    text: 'Cambio de aceite, filtros, revisión completa y mantenimiento preventivo para mantener tu auto en óptimas condiciones.',
   },
   {
-    icon: 'mdi:car',
-    title: 'Electromecánica',
-    description: 'Soluciones eléctricas y electrónicas para tu vehículo',
+    icon: 'lucide:gauge',
+    title: 'Diagnóstico Computarizado',
+    text: 'Diagnóstico preciso con equipos de última generación para identificar cualquier problema en tu vehículo.',
   },
   {
-    icon: 'mdi:car-wash',
-    title: 'Lavado y detailing',
-    description: 'Limpieza y cuidado estético de tu vehículo',
+    icon: 'lucide:zap',
+    title: 'Sistema Eléctrico',
+    text: 'Reparación y mantenimiento del sistema eléctrico, alternadores, baterías y componentes electrónicos.',
   },
   {
-    icon: 'mdi:car-cog',
-    title: 'Alineación y balanceo',
-    description: 'Ajuste y mantenimiento de la suspensión y dirección',
+    icon: 'lucide:car',
+    title: 'Frenos y Suspensión',
+    text: 'Servicio completo de frenos, amortiguadores, suspensión y alineación para tu seguridad en el camino.',
   },
   {
-    icon: 'mdi:car-battery',
-    title: 'Baterías',
-    description: 'Reemplazo y mantenimiento de baterías automotrices',
+    icon: 'lucide:cog',
+    title: 'Motor y Transmisión',
+    text: 'Reparación especializada de motores, cajas de cambio y sistemas de transmisión automática y manual.',
+  },
+  {
+    icon: 'lucide:air-vent',
+    title: 'Aire Acondicionado',
+    text: 'Mantenimiento, reparación y recarga de sistemas de aire acondicionado y climatización vehicular.',
   },
 ];
 ---
 
-<Section>
-  <h2 class="font-bebas-neue m-4 text-center text-4xl text-white">Servicios</h2>
-  {
-    services.map(({ icon, title, description }) => (
-      <article class="flex h-80 w-64 flex-col items-center gap-2 rounded-2xl bg-zinc-900 p-8 text-center text-white shadow-2xl shadow-zinc-900">
-        <Icon name={icon} size="8rem" />
-        <h3 class="text-2xl font-bold">{title}</h3>
-        <p class="text-lg">{description}</p>
-      </article>
-    ))
-  }
+<Section
+  title="Nuestros Servicios"
+  subtitle="Ofrecemos una aplia gama de servicios automotrices con la más alta calidad y profesionalismo."
+>
+  <article class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    {
+      services.map(({ icon, title, text }) => (
+        <div class="bg-card text-on-card flex flex-col gap-6 rounded-xl border p-6 shadow-lg">
+          <div class="bg-primary/10 mx-auto flex size-[4rem] items-center justify-center rounded-lg text-2xl text-[2rem]">
+            <Icon name={icon} class="text-primary" />
+          </div>
+          <h3 class="text-xl font-semibold">{title}</h3>
+          <p class="text-on-muted text-base leading-relaxed">{text}</p>
+        </div>
+      ))
+    }
+  </article>
 </Section>
