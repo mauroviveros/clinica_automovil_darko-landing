@@ -1,0 +1,70 @@
+---
+import { Section } from '@components';
+import { Icon } from 'astro-icon/components';
+
+const cards = [
+  {
+    icon: 'lucide:users',
+    title: 'Clientes satisfechos',
+    description: 'Más de 5000 clientes satisfechos',
+    value: '5000+',
+  },
+  {
+    icon: 'lucide:wrench',
+    title: 'Años de experiencia',
+    description: 'Más de 35 años de experiencia en el sector automotriz',
+    value: '35+',
+  },
+  {
+    icon: 'lucide:award',
+    title: 'Garantía en Trabajos',
+    description: 'Garantía de por vida en todos nuestros trabajos',
+    value: '100%',
+  },
+  {
+    icon: 'lucide:clock',
+    title: 'Servicio de Emergencia',
+    description: 'Atención de emergencia para tu vehículo las 24 horas del día',
+    value: '24/7',
+  },
+];
+---
+
+<Section>
+  <article class="grid items-center gap-16 lg:grid-cols-2">
+    <div class="flex flex-col gap-4">
+      <h2 class="text-4xl font-bold">Más de 35 Años Cuidando tu Automóvil</h2>
+      <p class="text-on-muted text-lg">
+        En La Clínica del Automóvil Darko, nos especializamos en brindar servicios automotrices de
+        la más alta calidad. Nuestro equipo de mecánicos certificados cuenta con años de experiencia
+        y utiliza tecnología de punta para diagnosticar y reparar tu vehículo.
+      </p>
+      <p class="text-on-muted text-lg leading-relaxed">
+        Creemos que cada cliente merece un servicio personalizado y transparente. Por eso, te
+        explicamos cada procedimiento y te ofrecemos presupuestos claros sin sorpresas.
+      </p>
+
+      <div class="grid grid-cols-2 gap-6">
+        {
+          cards.map((card) => (
+            <div class="bg-card rounded-lg p-4 text-center">
+              <div class="bg-primary/10 mx-auto mb-3 flex size-12 items-center justify-center rounded-lg">
+                <Icon name={card.icon} size="2rem" class="text-primary" />
+              </div>
+              <span class="text-primary mb-1 text-2xl font-bold">{card.value}</span>
+              <p class="text-on-muted text-sm">{card.title}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <figure class="relative p-4">
+      <img
+        class="rounded-2xl"
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ObxMt4d3T5MDA2Ca7JyHf5lCNuxMZN.png"
+        alt=""
+      />
+    </figure>
+  </article>
+</Section>
